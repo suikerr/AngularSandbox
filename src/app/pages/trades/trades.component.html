@@ -1,0 +1,28 @@
+<h1>Trades</h1>
+<pre>Rows: {{tradeRows.length}}, total: {{total | currency}}, days: {{days}} ({{total/days | currency}} per day)</pre>
+<div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Symbol</th>
+              <th>SoldOn</th>
+              <th class="text-right">Sold</th>
+              <th class="text-right">Amount</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="tradeRows.length">
+            <tr *ngFor="let tradeRow of tradeRows">
+              <td>{{tradeRow.Symbol}}</td>
+              <td>{{tradeRow.SoldOn | date}}</td>
+              <td class="text-right">{{tradeRow.ResultPercent | percent : '1.2-2'}}</td>
+              <td class="text-right">{{tradeRow.ResultAmountNett | currency}}</td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+              <td *ngIf="!tradeRows.length" colspan="5">Empty</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      

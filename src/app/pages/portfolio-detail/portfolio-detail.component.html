@@ -1,0 +1,6 @@
+<h1>Portfolio: {{symbol}}, {{companyName}}</h1>
+<button class="btn btn-primary" [routerLink]="['/portfolio']"><i class="fas fa-chevron-left"></i> Back</button>
+<app-portfolio-chart *ngIf="symbol && boughtFor" 
+    [symbol]="symbol"
+    [boughtOn]="boughtOn"
+    [boughtFor]="boughtFor"></app-portfolio-chart>

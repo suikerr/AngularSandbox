@@ -1,0 +1,22 @@
+<h1>Portfolio</h1>
+<p>Total invested: {{totalInvested | currency}} ({{portfolioRows.length}} rows {{plusCount}}+ {{minusCount}}- {{thresholdCrossedCount}}&#10003;)</p>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Symbol</th>
+        <th class="text-right" colspan="2">Threshold</th>
+        <th class="text-right">Current</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let portfolioRow of portfolioRows" 
+          [routerLink]="['/portfolio', portfolioRow.RowKey]">
+        <td>{{portfolioRow.Symbol}}</td>
+        <td class="text-right">{{portfolioRow.Threshold | currency}} <i class="fas" [ngClass]="(portfolioRow.ThresholdCrossed)?'fa-check':'fa-hourglass-half'"></i></td>
+        <td class="text-right">{{(portfolioRow.Threshold - portfolioRow.BoughtFor) / portfolioRow.Threshold | percent :'1.2-2'}}</td>
+        <td class="text-right" [ngClass]="(portfolioRow.CurrentPercent>0)?'green-text':'red-text'">{{portfolioRow.CurrentPercent | percent:'1.2-2'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

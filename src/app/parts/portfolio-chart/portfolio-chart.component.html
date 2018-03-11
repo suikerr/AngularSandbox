@@ -1,0 +1,10 @@
+<div style="width:100%">
+      <canvas id="canvas"></canvas>
+</div>
+<span *ngFor="let period of periods" >
+      <input type="radio" 
+            [value]="period"
+            [(ngModel)]="selectedPeriod"
+            (change)="selectedPeriodChange()"
+            name="period" /> {{period}}
+</span>

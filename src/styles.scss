@@ -1,0 +1,18 @@
+@import "dashboard";
+
+.active .badge 
+{
+  @extend .badge-light
+}
+
+.red-text {
+  color: red;
+}
+
+.green-text {
+  color: green;
+}
+
+.table-hover {
+  cursor: pointer;
+}
