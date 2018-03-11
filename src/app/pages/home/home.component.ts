@@ -38,6 +38,6 @@ export class HomeComponent implements OnInit {
         setTimeout(() => {
           this.vergeIsLoading = false;
         }, 200);
-      })
+      });
   }
 }
