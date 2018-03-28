@@ -17,7 +17,7 @@ export class TradesComponent implements OnInit {
   public tradeRows: ITradeRow[] = [];
   public total: number;
   public days: number;
-  
+
   ngOnInit() {
     this
       .stockStorageService
@@ -27,7 +27,7 @@ export class TradesComponent implements OnInit {
         this.tradeRows.orderByDescending(x => x.SoldOn);
         this.total = this.tradeRows.sum(x => x.ResultAmountNett);
 
-        var start = moment(this.tradeRows[this.tradeRows.length - 1].SoldOn);
+        const start = moment(this.tradeRows[this.tradeRows.length - 1].SoldOn);
         this.days = moment().diff(start, 'days') + 1;
       });
   }

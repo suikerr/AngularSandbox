@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SettingsService } from '../../connectors/settings.service';
 import { CryptoCompareService } from '../../connectors/crypto-compare.service';
 
+import * as moment from 'moment';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,6 +11,7 @@ import { CryptoCompareService } from '../../connectors/crypto-compare.service';
 })
 export class HomeComponent implements OnInit {
 
+  public test: string;
   public stockPrice: number;
   public vergeValue: number;
   public vergeIsLoading: boolean = true;
@@ -20,6 +23,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.loadVerge();
+
+    moment.locale('nl');
+    this.test = moment().format('dddd D MMMM YYYY');
   }
 
 
