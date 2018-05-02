@@ -7,11 +7,11 @@ export class CryptoCompareService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getPrice = (symbol: string) : Observable<number> => {
+  public getPrice = (symbol: string): Observable<number> => {
     const url = `https://min-api.cryptocompare.com/data/price?fsym=${symbol}&tsyms=EUR`;
     return this
       .httpClient
       .get(url)
-      .map((resonse:any) => resonse.EUR);    
+      .map((resonse: any) => resonse.EUR);
   }
 }

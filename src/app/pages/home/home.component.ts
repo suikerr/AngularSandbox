@@ -9,6 +9,7 @@ import { CryptoCompareService } from '../../connectors/crypto-compare.service';
 })
 export class HomeComponent implements OnInit {
 
+  public vergeAmount: number = 1775.60161696;
   public stockPrice: number;
   public vergeValue: number;
   public vergeIsLoading: boolean = true;
@@ -34,7 +35,7 @@ export class HomeComponent implements OnInit {
       .getPrice('XVG')
       .subscribe(stockPrice => {
         this.stockPrice = stockPrice;
-        this.vergeValue = stockPrice * .95 * 2146.40046600;
+        this.vergeValue = stockPrice * .95 * this.vergeAmount;
         setTimeout(() => {
           this.vergeIsLoading = false;
         }, 200);
