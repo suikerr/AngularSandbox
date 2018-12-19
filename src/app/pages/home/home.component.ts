@@ -12,6 +12,7 @@ import * as moment from 'moment';
 export class HomeComponent implements OnInit {
 
   public vergeAmount: number = 3587.06455396;
+  public test: string;
   public stockPrice: number;
   public vergeValue: number;
   public vergeIsLoading: boolean = true;
