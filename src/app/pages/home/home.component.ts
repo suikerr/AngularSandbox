@@ -9,7 +9,7 @@ import { CryptoCompareService } from '../../connectors/crypto-compare.service';
 })
 export class HomeComponent implements OnInit {
 
-  public vergeAmount: number = 1775.60161696;
+  public vergeAmount: number = 3587.06455396;
   public stockPrice: number;
   public vergeValue: number;
   public vergeIsLoading: boolean = true;
